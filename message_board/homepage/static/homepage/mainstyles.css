@@ -1,0 +1,125 @@
+*{margin:0}
+
+a{
+    text-decoration: none;
+    color:white;
+    margin-top:20px;
+}
+
+
+nav{
+    
+    position:absolute;
+    display:flex;
+    flex-direction:row;
+    left:0px;
+    top:-20px
+    
+}
+            
+a div{
+    height:100px;
+    width:120px;
+    background-color:rgba(32, 54, 68, 0.479);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-sizing:border-box;
+    
+}
+            
+a div:hover{
+    background-color:rgb(62, 149, 149)
+}
+body{background-color: rgba(94, 184, 136, 0.438);}
+
+.head{
+    height:100px;
+    width:100%;    
+    background-color: rgb(10, 102, 102);
+    color:rgb(74, 161, 150);
+    display:flex;
+    flex-direction:row
+    
+    
+}
+
+
+                        
+.container{              
+   
+    display:flex;
+
+    height:400px;
+    width:100%;
+    
+}
+
+h1{
+
+    margin-top:30px;
+    margin-left:650px;
+    
+    width:500px
+}    
+
+.status1{
+    margin-top:45px;
+    margin-left:300px;
+    width:230px;
+    
+
+}
+  
+
+            
+.username{
+    color:white;
+    margin-top:8px;
+    margin-right:100px;
+
+}
+            
+.logout{
+    color:rgb(75, 218, 194);
+
+    height:20px;
+    margin-top:17px
+}
+            
+
+.button2{
+    background-color:rgb(10, 102, 102);
+    border:none;
+    color:rgba(8, 230, 193, 0.849);
+    cursor:pointer;
+    border:1px solid;
+
+}
+
+.search{
+    width:238px;    
+    height:30px;
+    background-color:rgb(10, 122, 102);
+    border:none;
+    
+}
+
+.searchcontainer{
+    position:absolute;
+    height:60px;
+    width:130px;
+    
+    top:100px;
+}
+.status{
+    margin-left:200px;
+    margin-top:10px;
+    height:100px;
+    color:rgb(75, 218, 194);
+
+}
+
+.searchb{
+    height:30px
+}

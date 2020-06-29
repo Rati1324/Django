@@ -1,0 +1,32 @@
+
+.reg input{
+    margin-bottom:20px;
+    margin-top:5px
+}
+h2{color:white;margin-left:200px}
+.content{
+
+    box-sizing:border-box;
+    padding-top:60px;
+    background-color:rgb(74, 161, 150);
+    width:640px;
+    height:580px;
+    margin:auto;
+    
+}
+
+.reg2{
+    background-color:green;
+    border-radius:7px;
+    height:30px;
+    width:100px;
+    border-color:green;
+    color:white
+}
+
+.reg{
+   margin-left:200px
+}
+.asteriskField {
+    display: none;
+}

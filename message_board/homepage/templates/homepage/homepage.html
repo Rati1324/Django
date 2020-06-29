@@ -1,0 +1,31 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'homepage/homepagestyles.css' %}">
+    
+    
+    <div class="content">
+        {% if posts %}
+            {% for post in posts %}
+                
+                <div class="title2"> Search results for : <span style="margin-left:10px">{{ title }}</span></div>
+                <div class="post">
+                         
+                        <a class="title" href="{{ post.id }}">{{ post.title }}</a>
+                        <div class="post2">
+                            <a class="date">{{ post.date }}</a>
+                            <a class="author">By: {{ post.author}}</a>
+                        </div>
+                                          
+                </div>  
+            {% endfor %}
+            {% else %}
+        
+            <div class="noposts">
+                <b>There are no posts yet</b>
+            </div>    
+        {% endif %}          
+    </div>
+    
+{% endblock %}

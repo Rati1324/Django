@@ -1,0 +1,60 @@
+{% extends "main.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'homepage/post.css' %}">
+    
+    <div class="maincontainer">
+        <div class="post">
+            <div class="title">
+                {{ details.title }}    
+            </div>
+            
+            <div class="details">
+                {{ details.body }}
+            </div>
+            
+            <div class="date">
+                <span style="margin-right:203px">{{ details.date }}</span>
+                <span style="margin-right:75px">By: {{ details.author }}</span>
+          
+         
+            </div>
+        </div>
+        <h3 style="margin-top:35px;">Comments</h3>
+        
+        
+        
+        
+        {% if user.is_authenticated %}
+            <span style="margin-right:500px;margin-top:10px">Post a comment:</span>
+            
+            <div class="post_comment">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.body }}
+            </div>
+                    <button type="submit" style="margin-right:550px;margin-top:10px">Post</button>
+                </form>
+            
+        
+        {% endif %}
+        
+   
+        <hr style="width:635px;margin:auto;margin-top:10px;color:rgb(74, 161, 150)">
+        {% for comment in comments %}
+            <div class="comments">
+                <div class="body2">{{ comment.body }}</div> 
+                <div class="date2">{{ comment.date }}
+                
+                    <div class="author2"><span>By: </span>{{ comment.author }}</div>
+                </div>
+                
+                
+            </div>
+            
+        {% endfor %}
+    </div>
+    
+{% endblock %}

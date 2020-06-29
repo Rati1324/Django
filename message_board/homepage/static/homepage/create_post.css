@@ -1,0 +1,47 @@
+*{margin:0}
+a{text-decoration: none;}
+body{background-color: rgba(94, 184, 136, 0.438);}
+
+.post{
+    margin:10px auto 10px auto;
+    min-height:270px;
+    width:40%;
+    border-radius: 10px;
+    background-color: rgb(74, 161, 150);
+    box-sizing:border-box;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    
+}
+
+.title{
+    align-self:center;
+    
+}
+
+.title input{width:390px}
+
+.body{
+    margin-top:20px;
+    align-self:center
+}
+
+.asteriskField {
+    display: none;
+}
+
+.createpost input,textarea{
+    margin-top:10px
+}
+
+.buttonpost{
+    background-color:green;
+    border-radius:7px;
+    height:30px;
+    width:100px;
+    border-color:green;
+    color:white;
+    margin-left:406px;
+    margin-top:20px
+}
