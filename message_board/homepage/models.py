@@ -6,7 +6,7 @@ class Post(models.Model):
     body= models.TextField(max_length=500)
     date= models.DateTimeField(auto_now_add=True)
     author= models.ForeignKey(User,on_delete=models.DO_NOTHING,default=None)
-    comments_amount=models.IntegerField(max_length=100,default=0)
+    comments_amount=models.IntegerField(default=0)
     
     def __str__(self):
         return self.title

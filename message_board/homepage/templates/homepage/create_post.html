@@ -5,13 +5,20 @@
 {% block content %}
     <div class="maincontainer">        
         <link rel="stylesheet" type="text/css" href="{% static 'homepage/create_post.css' %}">
-            <h2 class="title2">Create Post</h2>
-            <form class="post" method="POST" class="createpost">
-                {% csrf_token %}
-                <div class="title">{{ form.title|as_crispy_field }}</div>
-                <div class="body">{{ form.body|as_crispy_field  }}</div>
-                <button type="submit" class="buttonpost">Post</button>
-            </form>
+            <div class="content">
+                <h2 class="title2">Create Post</h2>
+                <form class="post" method="POST" class="createpost">
+                    {% csrf_token %}
+                    {% for i in form %}
+                        <div>
+                            <div class="label">{{i.label}}:</div>
+                            <div class="form">{{i}}</div>
+                        </div>
+                    {% endfor %}
+                        
+                    <button type="submit" class="buttonpost">Post</button>
+                </form>
+            </div>
     </div>
     
     

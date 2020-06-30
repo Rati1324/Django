@@ -2,7 +2,24 @@
 a{text-decoration: none;}
 body{background-color: rgba(94, 184, 136, 0.438);}
 
+.maincontainer{
+    width:100em;
+    flex-direction:column;
+    align-items:center;
+}
 
+.content{
+    display:flex;
+    justify-content:center;
+    margin:auto;
+    background-color:rgb(74, 161, 150);
+    width:640px;
+    height:480px;
+    margin-top:20px;
+    flex-direction:column;
+    align-items:center;   
+    
+}
 .post{
     margin:10px auto 10px auto;
     min-height:370px;
@@ -10,11 +27,10 @@ body{background-color: rgba(94, 184, 136, 0.438);}
     border-radius: 10px;
     background-color: rgb(74, 161, 150);
     box-sizing:border-box;
-    padding:20px;
-    padding-top:40px;
+    margin-bottom:30px;
     display:flex;
     flex-direction:column;
-    
+    align-items:center
 }
 
 .title{
@@ -33,9 +49,6 @@ body{background-color: rgba(94, 184, 136, 0.438);}
     display: none;
 }
 
-.createpost input,textarea{
-    margin-top:10px;
-}
 
 
 
@@ -46,8 +59,8 @@ body{background-color: rgba(94, 184, 136, 0.438);}
     width:100px;
     border-color:green;
     color:white;
-    margin-left:406px;
-    margin-top:20px
+    margin-left:306px;
+    margin-top:10px
 }
 
 .title2{
@@ -57,3 +70,13 @@ body{background-color: rgba(94, 184, 136, 0.438);}
     margin-top:30px;
     
 }
+
+input[type="text"]{
+    width:390px;   
+}
+
+.form{
+    margin-top:7px;
+}
+
+.label{margin-top:20px}
