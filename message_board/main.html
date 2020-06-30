@@ -10,12 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     </head>
-    <style>
-        {% if user.is_authenticated %}
-            h1{margin-left:390px;}
-        
-        {% endif %}
-    </style>
+    
     <body>
        <div class="maincontainer">
             <div class="head">
@@ -26,18 +21,16 @@
                         <a href="/create_post"><div>Create Post</div></a>                                       
                     </nav>
                     
-                    <div class="container">
-                            <h1>Message Board</h1>                            
-
-                            <div class="status"> You are logged in as: 
+                    
+                    <h1>Message Board</h1>                            
+       
+                    <div class="status"> You are logged in as: 
                                 <div class="username"> {{ user.username }} </div>
                                     <form class="logout" action="/account/logout/" method="post">
                                     {% csrf_token %}
                                     <button class="button2" type="submit">Log Out</button>
                                 </form>
-                            </div>        
-                    </div>
-
+                    </div>   
                 {% else %}
                     <nav>
                         <a href="http://127.0.0.1:8000/" ><div>Home</div></a> 
@@ -46,11 +39,11 @@
                                   
                     </nav>  
                 
-                    <div class="container">
-                        <h1>Message Board</h1>
-                        <div class="status1">You are not logged in </div>
+                 
+                    <h1>Message Board</h1>
+                    <div class="status1">You are not logged in </div>
                         
-                    </div>
+              
                          
                 {% endif %} 
                 
