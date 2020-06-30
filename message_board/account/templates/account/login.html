@@ -6,22 +6,24 @@
 {% block content %}
     
     <link rel="stylesheet" type="text/css" href="{% static 'register/loginstyles.css' %}">
-    <div class="content">
-
-        <h2>Log In</h2>
-        <form method="POST" class="log">
-            {% csrf_token %}
-            <div>{{form.username|as_crispy_field}}</div>
-            <div>{{form.password|as_crispy_field}}</div>
-   
-            <div style="width:250px">{{ form.non_field_errors }}</div>
-            
-            {% if request.GET.next %}
+    <div class="maincontainer">
+        <div class="content">
+    
+            <h2>Log In</h2>
+            <form method="POST" class="log">
+                {% csrf_token %}
+                <div>{{form.username|as_crispy_field}}</div>
+                <div>{{form.password|as_crispy_field}}</div>
+       
+                <div style="width:250px">{{ form.non_field_errors }}</div>
                 
-                <input type="hidden" name="next" value="{{ request.GET.next }}">
-                
-            {% endif %}
-            <button type="submit" class="button1">Log In</button>
-        </form>
+                {% if request.GET.next %}
+                    
+                    <input type="hidden" name="next" value="{{ request.GET.next }}">
+                    
+                {% endif %}
+                <button type="submit" class="button1">Log In</button>
+            </form>
+        </div>
     </div>
 {% endblock %}  
