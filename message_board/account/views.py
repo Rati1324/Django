@@ -35,6 +35,12 @@ def login_view(request):
 def logout_view(request): 
     if request.method=="POST":
         logout(request)
-        return redirect('http://127.0.0.1:8000/')
-    else:
-        return redirect('http://127.0.0.1:8000/')
+        return redirect('/')
+    
+    
+    
+    
+    
+    
+    
+    

@@ -4,12 +4,13 @@ body{background-color: rgba(94, 184, 136, 0.438);}
 
 .post{
     margin:10px auto 10px auto;
-    min-height:270px;
+    min-height:370px;
     width:40%;
     border-radius: 10px;
     background-color: rgb(74, 161, 150);
     box-sizing:border-box;
     padding:20px;
+    padding-top:40px;
     display:flex;
     flex-direction:column;
     
@@ -32,8 +33,10 @@ body{background-color: rgba(94, 184, 136, 0.438);}
 }
 
 .createpost input,textarea{
-    margin-top:10px
+    margin-top:10px;
 }
+
+
 
 .buttonpost{
     background-color:green;
@@ -44,4 +47,12 @@ body{background-color: rgba(94, 184, 136, 0.438);}
     color:white;
     margin-left:406px;
     margin-top:20px
+}
+
+.title2{
+    color:white;
+    width:200px;
+    margin:auto;
+    margin-top:30px;
+    
 }

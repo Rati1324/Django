@@ -6,11 +6,14 @@ body{background-color: rgba(94, 184, 136, 0.438);}
     height:700px;
     width:900px;
     margin:auto;
-    /* border:1px solid; */
+    margin-top:10px;
+    
+    display:flex;
     flex-direction: column;
-    justify-content: unset;
-
+       
+    
 }
+
 .post{
     margin:auto auto 10px auto;
     height:120px;
@@ -21,12 +24,14 @@ body{background-color: rgba(94, 184, 136, 0.438);}
     display:flex;
     flex-direction: column;
     justify-content: center;
-    margin-top:10px;
-    
+    margin-top:10px;   
+    padding-bottom:20px
 }
 
 .post2{
-    margin-top:20px
+
+    display:flex;
+    flex-direction:row
 }
 
 .title{color:white;
@@ -39,13 +44,16 @@ body{background-color: rgba(94, 184, 136, 0.438);}
     margin-left:30px;
     font-size: 17px;
     margin-top:20px
-
 }
 
 .author{
     margin-left:30px;
-    color:rgb(8, 76, 85);
-    
+    color:rgb(8, 76, 85); 
+}
+
+.comments{
+    margin-left:260px;
+    color:rgb(8, 76, 85)
 }
 
 .noposts{
@@ -56,8 +64,40 @@ body{background-color: rgba(94, 184, 136, 0.438);}
     font-size:20px
 }
 
-.title2{
-    margin-top:20px;
+.title2{ 
     margin-left:100px;
     
 }
+
+.searchouter{
+    width:1200px;
+    height:30px;
+    margin:auto;
+    margin-top:20px;
+    display:flex; 
+    justify-content:center
+}
+
+.searchcontainer{
+    display:flex;
+}
+
+.search{  
+    height:30px;
+    width:400px;
+    border:none;  
+    border-radius:3px;
+}
+
+.searchb{
+    height:30px;
+    margin-left:15px;
+    background-color:rgb(74, 161, 150);
+    border-color:rgb(74, 161, 150)
+}
+
+.maincontainer{
+    width:100em;
+ 
+}
+

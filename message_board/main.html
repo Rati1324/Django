@@ -12,36 +12,27 @@
     </head>
     
     <body>
+       <div class="maincontainer">
             <div class="head">
-    
     
                 {% if user.is_authenticated %}
                     <nav>
                         <a href="http://127.0.0.1:8000/" ><div>Home</div></a>
-                        <a href="/create_post"><div>Create Post</div></a>           
-                                 
+                        <a href="/create_post"><div>Create Post</div></a>                                       
                     </nav>
+                    
                     <div class="container">
-                            <h1>Message Board</h1>                            
-                            
-        
+                            <h1 class="header">Message Board</h1>                            
+
                             <div class="status"> You are logged in as: 
                                 <div class="username"> {{ user.username }} </div>
-                               <form class="logout" action="/account/logout/" method="post">
+                                    <form class="logout" action="/account/logout/" method="post">
                                     {% csrf_token %}
                                     <button class="button2" type="submit">Log Out</button>
                                 </form>
                             </div>        
                     </div>
-                    
-                    
-                    <form method="GET" action="/search/" class="searchcontainer">
-                        {% csrf_token %}
-                        <input type="text" name="s" class="search" placeholder="search">
-                        <button type="submit" class="fa fa-search"></button>
-                    </form>
-                    
-             
+
                 {% else %}
                     <nav>
                         <a href="http://127.0.0.1:8000/" ><div>Home</div></a> 
@@ -55,24 +46,19 @@
                         <div class="status1">You are not logged in </div>
                         
                     </div>
-                    
-                    <form method="GET" action="search" class="searchcontainer">
-                        {% csrf_token %}
-                        <input type="text" class="search" placeholder="search"></input>
-                        <button type="submit" class="fa-fa-search"></button>
-                    </form>
-                    
+                         
                 {% endif %} 
                 
             </div>
-        
-        
-        
-        {% block title %}    
+    </div>
+    
+        {% block title %}        
+                    
         {% endblock %}
         
         {% block content %}
         {% endblock %}
+        
         
     </body>
     

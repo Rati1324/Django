@@ -7,8 +7,14 @@ from django.http import HttpResponse
 def homepage(request):
     
     posts=Post.objects.all().order_by('date').reverse()
-    return render(request,"homepage/homepage.html",{'posts':posts})
+    # post_id=[str(i.id) for i in posts]
 
+    # comments=[i.id_post for i in Comment.objects.all()]
+    # comment_per_post=[comments.count(i) for i in post_id]
+    
+    # result=dict(zip(post_id,comment_per_post)) 
+    return render(request,"homepage/homepage.html",{'posts':posts})
+    # return HttpResponse((result[i],i) for i in result)
 
 def post_details(request,post_id):
     
@@ -24,13 +30,15 @@ def post_details(request,post_id):
             comment=form.save(commit=False)
             comment.author=request.user
             comment.id_post=post_id
+            num_of_comments=Post.objects.get(id=post_id)
+            num_of_comments.comments_amount+=1
+            num_of_comments.save()
             comment.save()
             
             return redirect(f"/{post_id}")
             
             
     else:
-
         form=Comment_form()
     return render(request,'homepage/post.html',{'details':details,'comments':comments,'form':form})
 
@@ -57,7 +65,7 @@ def search(request):
     title=request.GET['s']
     results=Post.objects.all().filter(title__contains=keyword)
     
-    return render(request,'homepage/homepage.html',{'posts':results,'title':title})
+    return render(request,'homepage/homepage.html',{'posts':results,'title':title,'search':True})
     
     
     # return HttpResponse(title)
