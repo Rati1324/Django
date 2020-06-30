@@ -6,7 +6,7 @@
     <div class="maincontainer">
     
             <div class="searchouter">
-                <form method="GET" action="search" class="searchcontainer">
+                <form method="GET" action="/search" class="searchcontainer">
                         {% csrf_token %}
                         <input type="text" name="s" class="search" placeholder="search"></input>
                         <button type="submit" class="fa fa-search searchb"></button>
@@ -15,11 +15,11 @@
     
             <div class="content">
                     {%if posts %}
-                        {% for post in posts %}
                             {% if search %}
             
                                 <div class="title2"> Search results for : <span style="margin-left:10px">{{ title }}</span></div>
                             {% endif %}
+                        {% for post in posts %}
                             <div class="post">
                                      
                                     <a class="author">By: {{ post.author}}</a>
@@ -34,10 +34,14 @@
                         {% endfor %} 
                         
                         {% else %}
-                    
-                        <div class="noposts">
-                            <b>There are no posts yet</b>
-                        </div>    
+                        
+                            <div class="noposts">
+                                {% if search %}
+                                    <b>No posts found<b>
+                                {% else %}
+                                    <b>There are no posts yet</b>
+                                {% endif %}
+                            </div>    
                 {% endif %}          
             </div>
     <div>
