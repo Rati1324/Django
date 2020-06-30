@@ -10,7 +10,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     </head>
-    
+    <style>
+        {% if user.is_authenticated %}
+            h1{margin-left:390px;}
+        
+        {% endif %}
+    </style>
     <body>
        <div class="maincontainer">
             <div class="head">
@@ -22,7 +27,7 @@
                     </nav>
                     
                     <div class="container">
-                            <h1 class="header">Message Board</h1>                            
+                            <h1>Message Board</h1>                            
 
                             <div class="status"> You are logged in as: 
                                 <div class="username"> {{ user.username }} </div>

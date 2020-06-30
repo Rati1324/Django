@@ -1,19 +1,21 @@
 *{margin:0}
 
-
+.maincontainer{
+    width:100em;
+    margin:auto;
+    
+}
 
 a{
     text-decoration: none;
     color:white;
-    margin-top:20px;
+
 }
 
 nav{
-    position:absolute;
     display:flex;
     flex-direction:row;
-    left:0px;
-    top:-20px 
+    
 }
             
 a div{
@@ -39,25 +41,36 @@ body{background-color: rgba(94, 184, 136, 0.438);}
     display:flex;
     flex-direction:row;
 
+
 }
                    
-.container{               
+.container{    
+    float:right;           
     display:flex;
     height:400px;
-    width:100em; 
-     
+    width:83em; 
+    margin:auto;
+    flex-direction:row;
 }
 
 h1{
-    margin-left:650px;
     margin-top:30px;
-
-    width:500px;    
+    width:280px;   
+    margin-left:285px;
 }    
+
+
+.status{
+    margin-left:400px;
+    margin-top:10px;
+    height:1em;
+    color:rgb(75, 218, 194);
+
+}
 
 .status1{
     margin-top:45px;
-    margin-left:12em;
+    margin-left:23em;
     width:230px;
 }
          
@@ -81,13 +94,7 @@ h1{
     border:1px solid;
 }
 
-.status{
-    margin-left:150px;
-    margin-top:10px;
-    height:1em;
-    color:rgb(75, 218, 194);
 
-}
 
 
 
