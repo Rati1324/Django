@@ -1,8 +1,4 @@
-.maincontainer{
-    width:100em;
-    flex-direction:column;
-    align-items:center;
-}
+
 
 
 .content{
@@ -21,7 +17,7 @@
     background-color:green;
     border-radius:7px;
     height:30px;
-    
+    width:60px;
     border-color:green;
     color:white;
     margin-top:15px
@@ -40,6 +36,14 @@ h2{
 .log input{
     margin-bottom:20px;
     margin-top:5px
+}
+
+.form_container{
+    width:300px;
+
+}
+.form_container input{
+    width:280px;
 }
 
 .asteriskField {

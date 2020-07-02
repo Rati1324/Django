@@ -6,19 +6,18 @@
         
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="{% static 'homepage/mainstyles.css' %}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     </head>
     
     <body>
-       <div class="maincontainer">
+        <div class="maincontainer">
             <div class="head">
-    
+                
                 {% if user.is_authenticated %}
                     <nav>
-                        <a href="http://127.0.0.1:8000/" ><div>Home</div></a>
-                        <a href="/create_post"><div>Create Post</div></a>                                       
+                        <a href="/" ><div>Home</div></a>
+                        <a href="/post/create_post"><div>Create Post</div></a>                                       
                     </nav>
                     
                     
@@ -33,9 +32,9 @@
                     </div>   
                 {% else %}
                     <nav>
-                        <a href="http://127.0.0.1:8000/" ><div>Home</div></a> 
-                        <a href="http://127.0.0.1:8000/account/register/" ><div>Register</div></a>
-                        <a href="http://127.0.0.1:8000/account/login/"><div>Log In</div></a> 
+                        <a href="/" ><div>Home</div></a> 
+                        <a href="/account/register/" ><div>Register</div></a>
+                        <a href="/account/login/"><div>Log In</div></a> 
                                   
                     </nav>  
                 
@@ -47,16 +46,17 @@
                          
                 {% endif %} 
                 
-            </div>
-    </div>
+           </div>
     
-        {% block title %}        
-                    
-        {% endblock %}
-        
-        {% block content %}
-        {% endblock %}
-        
+            {% block title %}        
+                        
+            {% endblock %}
+            
+            {% block content %}
+            {% endblock %}
+            
+        </div>
+       
         
     </body>
     

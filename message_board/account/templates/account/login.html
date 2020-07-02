@@ -13,9 +13,9 @@
             <form method="POST" class="log">
                 {% csrf_token %}
                 {% for i in form %}
-                    <div>
-                    {{ i.label }}:<br>
-                    {{ i }}
+                    <div class="form_container">
+                        {{ i.label }}:<br>
+                        {{ i }}
                     </div>
                 {% endfor %}
            

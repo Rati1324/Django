@@ -1,8 +1,4 @@
-.maincontainer{
-    width:100em;
-    flex-direction:column;
-    align-items:center;
-}
+
 .reg input{
     margin-bottom:20px;
     margin-top:5px

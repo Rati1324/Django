@@ -2,33 +2,58 @@
 {% load static %}
 
 {% block content %}
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'homepage/homepagestyles.css' %}">
-    <div class="maincontainer">
+    
+
+    
     
             <div class="searchouter">
                 <form method="GET" action="/search" class="searchcontainer">
                         {% csrf_token %}
-                        <input type="text" name="s" class="search" placeholder="search"></input>
+                        <input type="text" name="s" class="search" placeholder="search" required></input>
                         <button type="submit" class="fa fa-search searchb"></button>
                 </form>
             </div>
-    
-            <div class="content">
+           
+            
                     {%if posts %}
                             {% if search %}
             
                                 <div class="title2"> Search results for : <span style="margin-left:10px">{{ title }}</span></div>
                             {% endif %}
+                            
                         {% for post in posts %}
                             <div class="post">
-                                     
-                                    <a class="author">By: {{ post.author}}</a>
-                                    <a class="title" href="/{{ post.id }}">{{ post.title }}</a>
+                                    <div class="upper_container">
+                                        <a class="author">By: {{ post.author}}</a>
+                                        {% if user == post.author %}
+                                            
+                                            <div class="icons">
+                                                <a href="post/edit_post/{{ post.id }}" title="Edit" style="margin-right:3px">
+                                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                                         <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                                    </svg>
+                                                </a>
+                                                <a href="post/delete_post/{{ post.id }}" title="Delete">
+                                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                         <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                                         <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+                                                         <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+                                                    </svg>
+                                                </a>
+                                                
+                                            </div>      
+                                        {% endif %}
+                                    </div>    
+                                    
+                                    <a class="title" href="/post/{{ post.id }}">{{ post.title }}</a>
                                     <div class="lower_container">
                                         <a class="date">{{ post.date }}</a>
                                         <a class="comments"><span>Comments: </span>{{ post.comments_amount }}</a>
-                                    </div>
-                                                      
+                                    </div>                   
                             </div>
                              
                         {% endfor %} 
@@ -43,7 +68,6 @@
                                 {% endif %}
                             </div>    
                 {% endif %}          
-            </div>
-    <div>
-{% endblock %}
 
+            
+{% endblock %}

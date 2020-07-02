@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <link rel="stylesheet" type="text/css" href="{% static 'homepage/post.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'post/post.css' %}">
     
     <div class="maincontainer">
         <div class="post">
@@ -15,15 +15,16 @@
                 {{ details.body }}
             </div>
             
-            <div class="date">
-                <span style="margin-right:223px">{{ details.date }}</span>
-                <span style="margin-right:75px">By: {{ details.author }}</span>
+            <div class="lower_container">
+                <span class="date">{{ details.date }}</span>
+                <span class="author">By: {{ details.author }}</span>
           
          
             </div>
         </div>
-        <h3 style="margin-top:35px;">Comments</h3>
-        
+        {% if comments %}
+            <h3 style="margin-top:35px;">Comments</h3>
+        {% endif %}
         
         
         
@@ -35,19 +36,21 @@
                     {% csrf_token %}
                     {{ form.body }}
             </div>
-                    <button type="submit" style="margin-right:550px;margin-top:10px">Post</button>
+                    <button type="submit" class="button1">Post</button>
                 </form>
             
         
         {% endif %}
         
-   
-        <hr style="width:635px;margin:auto;margin-top:10px;color:rgb(74, 161, 150)">
+        {% if comments %}
+            <hr style="width:635px;margin:auto;margin-top:10px;color:rgb(74, 161, 150)">
+        {% endif %}
+        
         {% for comment in comments %}
             <div class="comments">
                 <div class="body2">{{ comment.body }}</div> 
-                <div class="date2">{{ comment.date }}
                 
+                <div class="date2">{{ comment.date }}
                     <div class="author2"><span>By: </span>{{ comment.author }}</div>
                 </div>
                 
@@ -55,6 +58,7 @@
             </div>
             
         {% endfor %}
+        <div style="height:200px"></div>
     </div>
     
 {% endblock %}
