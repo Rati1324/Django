@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+    
+    
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'register/regstyles.css' %}">
+    
+    <div class="maincontainer">
+        <div class="content">
+            <h2 style="margin-bottom:20px;margin-top:-30px">Registration</h2>
+            <form method="POST" class="reg">
+                {% csrf_token %}
+                {% for i in form %}
+                    <div>
+                        {{ i.label }}:<br>
+                        {{ i }}
+                    </div>
+                {% endfor %}
+                    {% for o in form.errors.values %}
+                        {{ o }}
+                    {% endfor %}
+                <input type="submit" value="Submit" class="reg2"></input>
+            </form>
+                
+        </div>
+    </div>
+{% endblock %}
