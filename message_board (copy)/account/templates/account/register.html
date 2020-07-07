@@ -1,6 +1,6 @@
 {% extends 'main.html' %}
 {% load static %}
-{% load crispy_forms_tags %}
+
     
     
 
@@ -19,7 +19,7 @@
                     </div>
                 {% endfor %}
                     {% for o in form.errors.values %}
-                        {{ o }}
+                        <div class="error">{{ o }}</div>
                     {% endfor %}
                 <input type="submit" value="Submit" class="reg2"></input>
             </form>

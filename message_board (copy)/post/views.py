@@ -2,8 +2,10 @@ from django.shortcuts import render,redirect
 from .models import Post,Comment
 from .forms import CreatePost,Comment_form
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
+# from django.conf import settings
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 def post_details(request,post_id):
     

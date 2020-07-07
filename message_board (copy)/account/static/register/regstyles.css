@@ -35,3 +35,8 @@ h2{color:white;margin-left:200px}
     height:20px;
     width:228px;
 }
+
+.errorlist{list-style:none}
+.errorlist li{
+        color: red;
+    }
