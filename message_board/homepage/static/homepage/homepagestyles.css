@@ -27,49 +27,62 @@
     margin-top:10px;
     box-sizing:border-box;   
     padding-bottom:10px;
-    padding-top:10px;
 }
 
 .upper_container{
     display:flex;
-    flex-direction:row
+    flex-direction:row;
+    position:relative;
 }
 .icons{
     position:absolute;
-    right:453px;
+    right:23px;
         
 }
+
+.author{
+    
+    margin-left:30px;
+    color:rgb(8, 76, 85); 
+}
+
+.title{color:white;
+    margin-left:30px;
+    margin-top:21px;
+    margin-bottom:3px;
+    font-size: 25px;
+    
+}
+
 .lower_container{
     margin-top:20px;
     display:flex;
     flex-direction:row;
     position:relative;
+    width:720px;
 }
 
-.title{color:white;
-    margin-left:30px;
-    margin-top:18px;
-    font-size: 25px;
-}
-
-.pencil{margin-left:37em}
 .date{color:rgb(8, 76, 85);
+    position:absolute;
     font-size: 17px;
-    margin-left:29px;
+    left:490px;
 }
 
-.author{
-    margin-left:30px;
-    color:rgb(8, 76, 85); 
+.edited{
+    position:absolute;
+    left:489px;
+    color:rgb(8, 76, 85);
+    font-size:12px;
 }
-
 .comments{
     position:absolute;
+    left:-330px;
     margin-left:360px;
     color:rgb(8, 76, 85);
-    right:44px;
-
 }
+
+
+.pencil{margin-left:37em}
 
 .noposts{
     color:rgb(74, 161, 150);

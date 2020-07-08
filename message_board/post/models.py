@@ -5,6 +5,7 @@ class Post(models.Model):
     title= models.CharField(max_length=30,null=True,blank=True)
     body= models.TextField(max_length=500)
     date= models.DateTimeField(auto_now_add=True)
+    edit_date=models.DateTimeField(blank=True,null=True)
     author= models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.DO_NOTHING,default=None)
     comments_amount=models.IntegerField(default=0)
     

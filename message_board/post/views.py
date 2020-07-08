@@ -4,6 +4,7 @@ from .forms import CreatePost,Comment_form
 from django.contrib.auth.decorators import login_required
 # from django.contrib.auth.models import User
 # from django.conf import settings
+from datetime import datetime
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
@@ -87,6 +88,7 @@ def edit_post(request,post_id):
             the_post=the_post[0]
             the_post.body=request.POST.get('body',False)
             the_post.title=request.POST.get('title',False)
-            the_post.save()            
+            the_post.edit_date=datetime.now()
+            the_post.save()
             
             return redirect(f'/post/{post_id}')

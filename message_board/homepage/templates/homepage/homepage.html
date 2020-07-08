@@ -47,12 +47,15 @@
                                                 
                                             </div>      
                                         {% endif %}
+                                        {% if post.edit_date %}
+                                            <span class="edited">Edited: {{post.edit_date.year}}-{{post.edit_date.month}}-{{post.edit_date.month}} {{post.edit_date.hour}}:{{post.edit_date.minute}} </span>    
+                                        {% endif %}
                                     </div>    
                                     
                                     <a class="title" href="/post/{{ post.id }}">{{ post.title }}</a>
                                     <div class="lower_container">
-                                        <a class="date">{{ post.date }}</a>
                                         <a class="comments"><span>Comments: </span>{{ post.comments_amount }}</a>
+                                        <a class="date">{{ post.date }}</a>
                                     </div>                   
                             </div>
                              

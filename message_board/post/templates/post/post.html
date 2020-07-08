@@ -1,6 +1,6 @@
 {% extends "main.html" %}
 {% load static %}
-{% load crispy_forms_tags %}
+
 
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{% static 'post/post.css' %}">
@@ -8,7 +8,8 @@
     <div class="maincontainer">
         <div class="post">
             <div class="title">
-                {{ details.title }}    
+                {{ details.title }}   
+                
             </div>
             
             <div class="details">
@@ -18,6 +19,9 @@
             <div class="lower_container">
                 <span class="date">{{ details.date }}</span>
                 <span class="author">By: {{ details.author }}</span>
+                {% if details.edit_date %} 
+                    <span class="edited">Edited: {{details.edit_date.year}}-{{details.edit_date.month}}-{{details.edit_date.month}} {{details.edit_date.hour}}:{{details.edit_date.minute}} </span>
+                {% endif %}
           
          
             </div>
